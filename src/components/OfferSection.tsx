@@ -59,7 +59,7 @@ export function OfferSection() {
   ];
 
   return (
-      <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
+      <section className="py-20 bg-gradient-to-b from-muted/30 to-background" id="pricing">
         <div className="max-w-7xl mx-auto px-6">
           {/* Main Offer */}
           <div className="text-center space-y-8 mb-16">

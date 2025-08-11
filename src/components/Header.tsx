@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import demoResult from '../images/demo-result.jpg';
 
 export function Header() {
   return (
@@ -14,8 +15,8 @@ export function Header() {
         </div>
 
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
           <a href="#benefits" className="text-muted-foreground hover:text-foreground transition-colors">Benefits</a>
+          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
           <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
         </div>
 
@@ -71,9 +72,9 @@ export function Header() {
 
           <div className="relative">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop"
+              src={demoResult}
               alt="Professional resume example"
-              className="rounded-2xl shadow-2xl w-full"
+              className="rounded-2xl shadow-2xl w-120"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border">
               <div className="flex items-center space-x-3">

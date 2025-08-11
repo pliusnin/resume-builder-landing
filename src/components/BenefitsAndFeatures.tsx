@@ -100,7 +100,7 @@ export function BenefitsAndFeatures() {
   // ];
 
   return (
-      <section className="py-20">
+      <section className="py-20" id="benefits">
         <div className="max-w-7xl mx-auto px-6">
           {/* Main Benefits */}
           <div className="text-center space-y-4 mb-20">
@@ -148,7 +148,7 @@ export function BenefitsAndFeatures() {
           </div>
 
           {/* Features Grid */}
-          <div className="mt-32">
+          <div className="mt-32" id="features">
             <div className="text-center space-y-4 mb-16">
               <h2 className="text-3xl md:text-4xl">Powerful Features That <span className="text-primary">Work</span></h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
