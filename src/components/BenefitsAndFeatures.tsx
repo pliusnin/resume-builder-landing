@@ -13,6 +13,9 @@ import {
   BarChart3,
   RefreshCw
 } from "lucide-react";
+import createResumeImage from '../images/5min-create.jpg';
+import atsOptimizedImage from '../images/ats-optimized.jpg';
+import pdfDownload from '../images/pdf-download.jpg';
 
 export function BenefitsAndFeatures() {
   const mainBenefits = [
@@ -20,21 +23,21 @@ export function BenefitsAndFeatures() {
       icon: Zap,
       title: "5-Minute Resume Creation",
       description: "Our system guides you through each step, creating a professional resume in minutes, not hours.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
+      image: createResumeImage,
       validationPoints: ["Time-Saving Technology", "Easy to Use"]
     },
     {
       icon: Shield,
       title: "100% ATS Optimized",
       description: "Every template is designed to pass through applicant tracking systems with flying colors.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      image: atsOptimizedImage,
       validationPoints: ["Proven Results", "Industry Compliant"]
     },
     {
       icon: Download,
       title: "Instant PDF Download",
       description: "Get your polished, professional resume as a high-quality PDF ready to send to employers.",
-      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=500&h=300&fit=crop",
+      image: pdfDownload,
       validationPoints: ["Professional Quality", "Ready to Send"]
     }
   ];

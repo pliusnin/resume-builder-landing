@@ -113,7 +113,7 @@ export function OfferSection() {
                     <div className="py-6">
                       <div className="flex items-baseline justify-center space-x-1">
                         <span className="text-4xl md:text-5xl">{plan.price}</span>
-                        <span className="text-muted-foreground">/{plan.period.split(' ')[1] || plan.period.split(' ')[2]}</span>
+                        {/*<span className="text-muted-foreground">/{plan.period.split(' ')[1] || plan.period.split(' ')[2]}</span>*/}
                       </div>
                       <div className="text-sm text-muted-foreground mt-1">{plan.period}</div>
 
