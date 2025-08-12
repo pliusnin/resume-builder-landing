@@ -11,11 +11,12 @@ import {
   Target,
   Sparkles,
   BarChart3,
-  RefreshCw
+  RefreshCw, Clock
 } from "lucide-react";
 import createResumeImage from '../images/5min-create.jpg';
 import atsOptimizedImage from '../images/ats-optimized.jpg';
 import pdfDownload from '../images/pdf-download.jpg';
+import demoResult from '../images/demo-result.jpg';
 
 export function BenefitsAndFeatures() {
   const mainBenefits = [
@@ -118,20 +119,21 @@ export function BenefitsAndFeatures() {
 
           <div className="space-y-20">
             {mainBenefits.map((benefit, index) => (
-                <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div key={index}
+                     className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                   <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                     <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <benefit.icon className="w-8 h-8 text-primary" />
+                      <benefit.icon className="w-8 h-8 text-primary"/>
                     </div>
                     <h3 className="text-2xl md:text-3xl">{benefit.title}</h3>
                     <p className="text-lg text-muted-foreground">{benefit.description}</p>
                     <div className="flex items-center space-x-4 text-sm">
                       <div className="flex items-center space-x-2 text-green-600">
-                        <CheckCircle className="w-4 h-4" />
+                        <CheckCircle className="w-4 h-4"/>
                         <span>{benefit.validationPoints[0]}</span>
                       </div>
                       <div className="flex items-center space-x-2 text-green-600">
-                        <CheckCircle className="w-4 h-4" />
+                        <CheckCircle className="w-4 h-4"/>
                         <span>{benefit.validationPoints[1]}</span>
                       </div>
                     </div>
@@ -150,7 +152,8 @@ export function BenefitsAndFeatures() {
           {/* Features Grid */}
           <div className="mt-32" id="features">
             <div className="text-center space-y-4 mb-16">
-              <h2 className="text-3xl md:text-4xl">Powerful Features That <span className="text-primary">Work</span></h2>
+              <h2 className="text-3xl md:text-4xl">Powerful Features That <span className="text-primary">Work</span>
+              </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Everything you need to create winning resumes that get you hired faster.
               </p>
@@ -161,7 +164,7 @@ export function BenefitsAndFeatures() {
                   <Card key={index} className="hover:shadow-lg transition-shadow">
                     <CardHeader>
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                        <feature.icon className="w-6 h-6 text-primary" />
+                        <feature.icon className="w-6 h-6 text-primary"/>
                       </div>
                       <CardTitle className="text-lg">{feature.title}</CardTitle>
                     </CardHeader>
@@ -170,6 +173,130 @@ export function BenefitsAndFeatures() {
                     </CardContent>
                   </Card>
               ))}
+            </div>
+          </div>
+
+          <div className="mt-32 bg-gradient-to-b from-muted/30 to-background py-20">
+            <div className="text-center space-y-4 mb-16">
+              <h2 className="text-3xl md:text-4xl">How Resumint <span className="text-primary">Works</span></h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Creating your perfect resume is simple. Our guided process gets you from zero to hired-ready in minutes.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Steps */}
+              <div className="space-y-8">
+                {/* Step 1 */}
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                      <span className="text-primary-foreground">1</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl">Choose Your Approach</h3>
+                    <p className="text-muted-foreground">
+                      Start with quick data entry or answer profession-specific questions to get personalized template
+                      recommendations and smart suggestions.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                      <span className="text-primary-foreground">2</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl">Fill Your Information</h3>
+                    <p className="text-muted-foreground">
+                      Step-by-step guided entry of contact details, experience, education, and skills with AI-powered
+                      auto-fill to save time.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                      <span className="text-primary-foreground">3</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl">Optimize & Perfect</h3>
+                    <p className="text-muted-foreground">
+                      Get real-time ATS score feedback, keyword suggestions, and content optimization to maximize your
+                      resume's impact.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 4 */}
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                      <span className="text-primary-foreground">4</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl">Download & Apply</h3>
+                    <p className="text-muted-foreground">
+                      Download your professional, ATS-optimized resume as a high-quality PDF and start landing
+                      interviews immediately.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Time indicator */}
+                <div className="flex items-center space-x-3 mt-8 p-4 bg-white rounded-xl border">
+                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-green-600"/>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-green-700">Ready in 5 minutes</div>
+                    <div className="text-sm text-muted-foreground">Most users complete their resume in under 5 minutes
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Product Screenshot Placeholder */}
+              <div className="relative">
+                <div className="bg-muted/50 rounded-2xl p-8 shadow-2xl border">
+                  <div className="bg-white rounded-xl p-6 space-y-4">
+                    <ImageWithFallback
+                        src={demoResult}
+                        alt="Professional resume example"
+                        className="rounded-2xl shadow-2xl w-120"
+                    />
+                  </div>
+                </div>
+
+                {/* Floating elements for visual appeal */}
+                <div
+                    className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-3 py-2 rounded-lg shadow-lg">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4"/>
+                    <span className="text-sm">98% ATS Score</span>
+                  </div>
+                </div>
+
+                <div className="absolute -bottom-4 -left-4 bg-white px-4 py-3 rounded-xl shadow-lg border">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-600 text-sm">✓</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">Resume Complete</div>
+                      <div className="text-xs text-muted-foreground">Ready to download</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
