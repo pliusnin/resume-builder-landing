@@ -81,7 +81,7 @@ export function OfferSection() {
           {/* Primary CTA with Price */}
           <div className="max-w-xl mx-auto mb-16">
             <div className="space-y-4">
-              <Button size="lg" className="text-xl px-8 py-10 w-full bg-primary hover:bg-primary/90 flex flex-col">
+              <Button size="lg" className="text-xl px-8 py-10 w-full bg-primary hover:bg-primary/90 flex flex-col cursor-pointer">
                 <div className="flex flex-row items-center">
                   Start Building My Resume for $2.49
                   <ArrowRight className="w-5 h-5 ml-2"/>
@@ -270,22 +270,22 @@ export function OfferSection() {
           {/*</div>*/}
 
           {/* Final CTA */}
-          <div
-              className="mt-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground p-8 md:p-12 rounded-3xl text-center">
-            <h3 className="text-xl md:text-2xl mb-3">
-              Still deciding? Remember...
-            </h3>
-            <p className="text-base opacity-90 mb-6 max-w-2xl mx-auto">
-              Every day you wait is another day your dream job could go to someone else.
-              Start building your winning resume now.
-            </p>
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-              Start for Just $2.49
-            </Button>
-            <div className="mt-3 text-sm opacity-80">
-              90% off • Full access • Cancel anytime
-            </div>
-          </div>
+          {/*<div*/}
+          {/*    className="mt-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground p-8 md:p-12 rounded-3xl text-center">*/}
+          {/*  <h3 className="text-xl md:text-2xl mb-3">*/}
+          {/*    Still deciding? Remember...*/}
+          {/*  </h3>*/}
+          {/*  <p className="text-base opacity-90 mb-6 max-w-2xl mx-auto">*/}
+          {/*    Every day you wait is another day your dream job could go to someone else.*/}
+          {/*    Start building your winning resume now.*/}
+          {/*  </p>*/}
+          {/*  <Button size="lg" variant="secondary" className="text-lg px-8 py-4">*/}
+          {/*    Start for Just $2.49*/}
+          {/*  </Button>*/}
+          {/*  <div className="mt-3 text-sm opacity-80">*/}
+          {/*    90% off • Full access • Cancel anytime*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </div>
       </section>
   );
