@@ -9,7 +9,7 @@ export function PainPoints() {
     },
     {
       icon: FileX,
-      title: "ATS Rejection",
+      title: "ATS Resume Rejection",
       description: "Your resume gets filtered out by applicant tracking systems before humans even see it."
     },
     {
@@ -32,7 +32,7 @@ export function PainPoints() {
             Tired of These <span className="text-destructive">Resume Struggles</span>?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            You're not alone. Millions of job seekers waste countless hours on resume formatting 
+            You're not alone. Millions of job seekers waste countless hours on resume formatting
             and still get rejected by ATS systems.
           </p>
         </div>

@@ -41,7 +41,7 @@ export function Header() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="text-lg px-8 py-6">
-                Create My New Resume Now
+                Create My Perfect Resume
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6">
                 Upload My Resume

@@ -23,7 +23,7 @@ export function BenefitsAndFeatures() {
     {
       icon: Zap,
       title: "5-Minute Resume Creation",
-      description: "Our system guides you through each step, creating a professional resume in minutes, not hours.",
+      description: "Our resume builder guides you through each step, creating a perfect resume in minutes, not hours.",
       image: createResumeImage,
       validationPoints: ["Time-Saving Technology", "Easy to Use"]
     },
@@ -57,7 +57,7 @@ export function BenefitsAndFeatures() {
     {
       icon: BarChart3,
       title: "ATS Score Checker",
-      description: "Real-time feedback on your resume's ATS compatibility"
+      description: "Get feedback for ATS resume compatibility"
     },
     {
       icon: Sparkles,
@@ -112,7 +112,7 @@ export function BenefitsAndFeatures() {
               From <span className="text-destructive">Struggle</span> to <span className="text-primary">Success</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Transform your job search with resumes that actually get results.
+              Transform your job search with ATS resume that actually get results.
               No more guesswork, no more rejection.
             </p>
           </div>
@@ -197,7 +197,7 @@ export function BenefitsAndFeatures() {
                   <div className="space-y-2">
                     <h3 className="text-xl">Choose Your Approach</h3>
                     <p className="text-muted-foreground">
-                      Start with quick data entry or answer profession-specific questions to get personalized template
+                      Resume builder login and start with quick data entry to get personalized template
                       recommendations and smart suggestions.
                     </p>
                   </div>
@@ -245,7 +245,7 @@ export function BenefitsAndFeatures() {
                   <div className="space-y-2">
                     <h3 className="text-xl">Download & Apply</h3>
                     <p className="text-muted-foreground">
-                      Download your professional, ATS-optimized resume as a high-quality PDF and start landing
+                      Build your perfect, professional and ATS-optimized resume as a high-quality PDF and start landing
                       interviews immediately.
                     </p>
                   </div>

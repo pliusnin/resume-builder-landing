@@ -7,13 +7,13 @@ export function OfferSection() {
   const allFeatures = [
     "Unlimited resume downloads",
     "10+ ATS-optimized templates",
-    "Real-time ATS score checker",
+    "ATS resume score checker",
     "Content suggestions",
     "Keyword optimization",
     "PDF format export",
     "24/7 customer support",
     "Mobile-friendly editor",
-    "Interview preparation tips",
+    "Free updates",
   ];
 
   // const pricingPlans = [
@@ -83,7 +83,7 @@ export function OfferSection() {
             <div className="space-y-4">
               <Button size="lg" className="text-xl px-8 py-10 w-full bg-primary hover:bg-primary/90 flex flex-col cursor-pointer">
                 <div className="flex flex-row items-center">
-                  Start Building My Resume for $2.49
+                  Start Building My Perfect Resume for $2.49
                   <ArrowRight className="w-5 h-5 ml-2"/>
                 </div>
                 <div className="text-xs text-red-500">
@@ -181,7 +181,7 @@ export function OfferSection() {
               <div className="text-2xl">⚡</div>
               <div className="font-semibold">Instant Access</div>
               <div className="text-sm text-muted-foreground">
-                Start creating resumes immediately after signup
+                Build your perfect resume immediately after login
               </div>
             </div>
             <div className="space-y-2">
@@ -195,7 +195,7 @@ export function OfferSection() {
               <div className="text-2xl">💯</div>
               <div className="font-semibold">Satisfaction Guaranteed</div>
               <div className="text-sm text-muted-foreground">
-                30-day money-back guarantee, no questions asked
+                High-quality result in PDF
               </div>
             </div>
           </div>
