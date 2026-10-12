@@ -11,7 +11,8 @@ The landing page is effectively the **product spec**: every feature and price it
 ## Stack
 - Vite 7 **multi-page app**, React 19, TypeScript 5.8 (strict, `verbatimModuleSyntax` → use `import type`), Tailwind CSS v4 (`@tailwindcss/vite`, real build, any utility works), shadcn-style primitives in `src/components/ui`, `lucide-react` icons
 - Yarn 1 (`yarn.lock`); Node 24 on this machine
-- Google Analytics tag `G-LR5F032LLH` inlined in `index.html` (landing page only; legal pages carry no analytics)
+- Google Analytics 4 (`VITE_GA_MEASUREMENT_ID` in `.env`) is loaded by `src/lib/analytics.ts` **only after the visitor accepts** the `ConsentBanner` (mounted on every page); a Global Privacy Control signal counts as "declined"; "Cookie settings" in the footer reopens the banner; declining removes `_ga*` cookies. Decision stored in `localStorage["resumint-consent"]` for 12 months.
+- SEO: `VITE_SITE_URL` (`.env`, production `https://resumint.net`) feeds canonical / Open Graph / Twitter tags in every HTML entry via Vite's `%VITE_SITE_URL%` substitution, `src/lib/site.ts` (absolute URLs, noindex guard for non-production hosts such as the github.io test copy), `src/components/StructuredData.tsx` (JSON-LD Organization / WebSite / SoftwareApplication with the plans from `legal.pricing`), `public/sitemap.xml`, `public/robots.txt` and the generated 1200×630 card `public/og-image.jpg`.
 - Figma export origin (`src/components/figma/ImageWithFallback.tsx`)
 
 ## Commands
@@ -24,9 +25,9 @@ yarn preview   # serve dist/ on :4173
 `.claude/launch.json` defines `landing-dev` (:5173) and `landing-preview` (:4173) for the in-app browser.
 
 ## Deployment
-- GitHub Pages via `.github/workflows/jekyll-gh-pages.yml`. The file name is misleading: it uses `skywarth/vite-github-pages-deployer` (yarn), not Jekyll. Runs on push to `main` and manually.
+- **Production is `https://resumint.net`** (Dmitry deploys it himself). The GitHub Pages copy at `pliusnin.github.io/resume-builder-landing/` is a **test instance**, deployed by `.github/workflows/jekyll-gh-pages.yml` (misleading name: it uses `skywarth/vite-github-pages-deployer`, not Jekyll) on every push to `main`. It gets a runtime `noindex` and its canonical tags point at production.
 - Remote: `git@github.com:pliusnin/resume-builder-landing.git`
-- No custom domain yet (no `public/CNAME`), so the deployer builds with `base=/resume-builder-landing/`. **All internal links must go through `src/lib/links.ts`**, which prefixes `import.meta.env.BASE_URL`; never hardcode `/privacy/`.
+- The deployer builds the test copy with `base=/resume-builder-landing/`; production uses `/`. **All internal links must go through `src/lib/links.ts`**, which prefixes `import.meta.env.BASE_URL`; absolute URLs (canonical, OG, sitemap, JSON-LD) come from `VITE_SITE_URL`; never hardcode `/privacy/` or the domain.
 - Legal pages are separate HTML entry points (`privacy/index.html` etc., registered in `vite.config.ts` → `build.rollupOptions.input`), so they work on static hosting without SPA fallbacks.
 
 ## Structure
@@ -36,6 +37,9 @@ yarn preview   # serve dist/ on :4173
 - `src/components/legal/LegalLayout.tsx` – header (logo, legal nav, back link), title, effective date, table of contents, content, `Footer`
 - `src/components/legal/Prose.tsx` – `Section` (anchored h2), `H3`, `P`, `Ul`/`Ol`/`Li`, `Strong`, `A`, `Callout`, `Table`, `Var` (placeholder-aware), `Email` (mailto once real)
 - `src/lib/links.ts` – base-aware URLs (`home`, `benefits`, `features`, `pricing`, `privacy`, `terms`, `refund`) plus `contact` (mailto to the configured email)
+- `src/lib/site.ts` – `SITE_URL`, `SITE_HOST`, `SITE_NAME`, `absoluteUrl()`, `applyNonProductionNoindex()`
+- `src/lib/analytics.ts` + `src/components/ConsentBanner.tsx` – consent storage, GA loader/opt-out, banner UI; `src/components/StructuredData.tsx` – JSON-LD
+- `.env` – committed public build settings (`VITE_SITE_URL`, `VITE_GA_MEASUREMENT_ID`); typed in `src/vite-env.d.ts`
 - `src/components/Header.tsx` – nav (Benefits / Features / Pricing anchors, **Sign In**, **Get Started**), hero, CTAs **Create My Perfect Resume** and **Upload My Resume**
 - `src/components/PainPoints.tsx`, `BenefitsAndFeatures.tsx` (`id="benefits"`, `id="features"`), `OfferSection.tsx` (`id="pricing"`), `Footer.tsx` (links via `links.ts`, dynamic year)
 - `src/styles/globals.css` – theme tokens; its base typography only applies where no ancestor has a `text-*` class, so legal components set explicit text classes. `src/index.css` is unused.
@@ -56,9 +60,10 @@ Treat these pages as drafts for a lawyer's review, not as reviewed legal advice.
 
 ## Known gaps / TODO
 - **No CTA is wired.** `Sign In`, `Get Started`, both hero buttons and all three pricing buttons have no `href`/`onClick`. They must link to the builder app (`/register`, `/login`), ideally with the chosen plan as a query param.
-- Marketing numbers (50K+ users, 94% ATS pass rate, 98% ATS score, 3.2x interviews) are placeholders.
-- No cookie consent banner although Google Analytics loads unconditionally.
+- Marketing numbers (50K+ users, 94% ATS pass rate, 98% ATS score, 3.2x interviews) are placeholders; the hero/how-it-works mockup contains Lorem Ipsum and the testimonials heading has no content (Dmitry chose to keep both for now).
+- Images are heavy (`5min-create.jpg` is 3.4 MB) and not lazy-loaded; no mobile menu below 768 px.
 - `README.md` is still the Vite template.
+- When adding a page: also add it to `public/sitemap.xml`.
 
 ## Conventions
 - One section = one component in `src/components`; primitives stay in `src/components/ui`; legal prose uses `src/components/legal/Prose.tsx` helpers.

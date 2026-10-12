@@ -5,16 +5,18 @@
  * development builds (see `Var` in components/legal/Prose.tsx) so it cannot be overlooked.
  * Keep prices in sync with `src/components/OfferSection.tsx`.
  */
+import { SITE_HOST, SITE_NAME, SITE_URL } from '../lib/site';
+
 export const legal = {
-  productName: 'Resumint',
+  productName: SITE_NAME,
   effectiveDate: 'October 12, 2026',
 
   // Operator of the Service (the "data controller" under the GDPR).
-  companyName: 'Resumint',
+  companyName: SITE_NAME,
   contactEmail: 'resumint@gmail.com',
   privacyEmail: 'resumint@gmail.com',
-  websiteUrl: 'https://resumint.net',
-  websiteHost: 'resumint.net',
+  websiteUrl: SITE_URL,
+  websiteHost: SITE_HOST,
 
   // Art. 27 GDPR / UK GDPR representatives.
   euRepresentative: 'not applicable',

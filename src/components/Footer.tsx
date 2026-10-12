@@ -1,5 +1,6 @@
 import { links } from '../lib/links';
 import { legal } from '../legal/config';
+import { openConsentSettings } from '../lib/analytics';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -36,6 +37,11 @@ export function Footer() {
               <div><a href={links.privacy} className="hover:text-foreground transition-colors">Privacy Policy</a></div>
               <div><a href={links.terms} className="hover:text-foreground transition-colors">Terms of Service</a></div>
               <div><a href={links.refund} className="hover:text-foreground transition-colors">Refund Policy</a></div>
+              <div>
+                <button type="button" onClick={openConsentSettings} className="hover:text-foreground transition-colors cursor-pointer">
+                  Cookie settings
+                </button>
+              </div>
             </div>
           </div>
         </div>

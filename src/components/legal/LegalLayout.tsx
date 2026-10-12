@@ -1,7 +1,9 @@
 import { useEffect, type ReactNode } from 'react';
 import { Footer } from '../Footer';
+import { ConsentBanner } from '../ConsentBanner';
 import { links } from '../../lib/links';
 import { legal } from '../../legal/config';
+import { applyNonProductionNoindex } from '../../lib/site';
 
 export interface TocEntry {
   id: string;
@@ -27,6 +29,8 @@ export function LegalLayout({ title, description, toc, children }: LegalLayoutPr
   // The page is client-rendered, so the browser's own fragment scroll can run before the target
   // section exists (e.g. when arriving from the footer's "Contact Us" link). Scroll once mounted.
   useEffect(() => {
+    applyNonProductionNoindex();
+
     const id = window.location.hash.slice(1);
     if (!id) {
       return;
@@ -102,6 +106,7 @@ export function LegalLayout({ title, description, toc, children }: LegalLayoutPr
       </main>
 
       <Footer />
+      <ConsentBanner />
     </div>
   );
 }

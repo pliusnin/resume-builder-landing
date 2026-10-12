@@ -123,9 +123,10 @@ export function PrivacyPolicy() {
           described in its <A href="https://policies.google.com/privacy">privacy policy</A>.
         </P>
         <Ul>
-          <Li>Where the law requires it (including in the EU, EEA and UK), analytics cookies are set only after you have given your consent, and you can change your choice at any time.</Li>
+          <Li>Google Analytics is loaded, and its cookies are set, <Strong>only after you click “Accept analytics” in our cookie banner</Strong>. If you decline, nothing is loaded. This applies to all visitors, wherever they are.</Li>
+          <Li>You can change or withdraw your choice at any time via <Strong>“Cookie settings”</Strong> in the footer of every page. Withdrawing consent stops tracking and deletes the Google Analytics cookies we set; your choice is remembered for 12 months.</Li>
+          <Li>If your browser sends a <Strong>Global Privacy Control</Strong> (GPC) signal, we treat it as a refusal of analytics cookies and do not show the banner.</Li>
           <Li>You can also block analytics by installing the <A href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out browser add-on</A> or by blocking cookies in your browser settings.</Li>
-          <Li>We honor the <Strong>Global Privacy Control</Strong> (GPC) browser signal as an opt-out where US state law gives it effect.</Li>
         </Ul>
         <P>We do not use advertising cookies, retargeting pixels or social media trackers.</P>
       </Section>
