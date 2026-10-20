@@ -5,6 +5,9 @@
 import { legal } from '../legal/config';
 
 const base = import.meta.env.BASE_URL; // always ends with "/"
+const appUrl = (import.meta.env.VITE_APP_URL ?? 'https://app.resumint.net').replace(/\/+$/, '');
+
+export type PlanId = 'monthly' | 'quarterly' | 'annual';
 
 export const links = {
   home: base,
@@ -15,4 +18,10 @@ export const links = {
   terms: `${base}terms/`,
   refund: `${base}refund/`,
   contact: `mailto:${legal.contactEmail}`,
+  // The builder app (separate origin, see VITE_APP_URL)
+  appLogin: `${appUrl}/login`,
+  appRegister: `${appUrl}/register`,
 } as const;
+
+/** Sign-up link that remembers which plan the visitor clicked on the pricing section. */
+export const appRegisterWithPlan = (plan: PlanId) => `${links.appRegister}?plan=${plan}`;

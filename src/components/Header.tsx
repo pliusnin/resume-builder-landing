@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import demoResult from '../images/demo-result.jpg';
+import { links } from '../lib/links';
 
 export function Header() {
   return (
@@ -21,8 +22,12 @@ export function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <Button variant="ghost">Sign In</Button>
-          <Button>Get Started</Button>
+          <Button variant="ghost" asChild>
+            <a href={links.appLogin}>Sign In</a>
+          </Button>
+          <Button asChild>
+            <a href={links.appRegister}>Get Started</a>
+          </Button>
         </div>
       </nav>
 
@@ -40,8 +45,8 @@ export function Header() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-6">
-                Create My Perfect Resume
+              <Button size="lg" className="text-lg px-8 py-6" asChild>
+                <a href={links.appRegister}>Create My Perfect Resume</a>
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6">
                 Upload My Resume

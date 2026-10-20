@@ -25,7 +25,7 @@ yarn preview   # serve dist/ on :4173
 `.claude/launch.json` defines `landing-dev` (:5173) and `landing-preview` (:4173) for the in-app browser.
 
 ## Deployment
-- **Production is `https://resumint.net`** (Dmitry deploys it himself). The GitHub Pages copy at `pliusnin.github.io/resume-builder-landing/` is a **test instance**, deployed by `.github/workflows/jekyll-gh-pages.yml` (misleading name: it uses `skywarth/vite-github-pages-deployer`, not Jekyll) on every push to `main`. It gets a runtime `noindex` and its canonical tags point at production.
+- **Production is `https://resumint.net`**: static files in `/var/www/html` on the server (`ssh resumint`, nginx + certbot). Deploy with `deploy/deploy-landing.sh` (builds, then `rsync --delete dist/` to the server). The GitHub Pages copy at `pliusnin.github.io/resume-builder-landing/` is a **test instance**, deployed by `.github/workflows/jekyll-gh-pages.yml` (misleading name: it uses `skywarth/vite-github-pages-deployer`, not Jekyll) on every push to `main`. It gets a runtime `noindex` and its canonical tags point at production. Server layout for the whole product is documented in `/Users/dmitry/www/resume-builder-api/CLAUDE.md` ("Production deployment").
 - Remote: `git@github.com:pliusnin/resume-builder-landing.git`
 - The deployer builds the test copy with `base=/resume-builder-landing/`; production uses `/`. **All internal links must go through `src/lib/links.ts`**, which prefixes `import.meta.env.BASE_URL`; absolute URLs (canonical, OG, sitemap, JSON-LD) come from `VITE_SITE_URL`; never hardcode `/privacy/` or the domain.
 - Legal pages are separate HTML entry points (`privacy/index.html` etc., registered in `vite.config.ts` → `build.rollupOptions.input`), so they work on static hosting without SPA fallbacks.
@@ -59,7 +59,7 @@ Treat these pages as drafts for a lawyer's review, not as reviewed legal advice.
 **Pricing:** $5 for the first month (lava.top promo code, first-time subscribers only), then $24.49/month · Quarterly $49.49 every 90 days ($16.50/mo) · Annual $99.49 ($8.29/mo) · "Cancel anytime" · "Secure payment, enterprise-grade encryption". Payments run through lava.top (API repo `CLAUDE.md` → Billing). Prices appear in `OfferSection.tsx`, `index.html` meta description, and `src/legal/config.ts` (`pricing`, used by Terms, Refund Policy and the JSON-LD in `StructuredData.tsx`); keep them in sync with the API's `BillingPlanCatalog`.
 
 ## Known gaps / TODO
-- **No CTA is wired.** `Sign In`, `Get Started`, both hero buttons and all three pricing buttons have no `href`/`onClick`. They must link to the builder app (`/register`, `/login`), ideally with the chosen plan as a query param.
+- CTAs link to the app via `links.appLogin` / `links.appRegister` / `appRegisterWithPlan(plan)` (origin from `VITE_APP_URL` in `.env`, `?plan=monthly|quarterly|annual` on the pricing buttons; the SPA does not read `plan` yet). **"Upload My Resume" is still unlinked** because no import feature exists; remove the button or build the feature.
 - Marketing numbers (50K+ users, 94% ATS pass rate, 98% ATS score, 3.2x interviews) are placeholders; the hero/how-it-works mockup contains Lorem Ipsum and the testimonials heading has no content (Dmitry chose to keep both for now).
 - Images are heavy (`5min-create.jpg` is 3.4 MB) and not lazy-loaded; no mobile menu below 768 px.
 - `README.md` is still the Vite template.

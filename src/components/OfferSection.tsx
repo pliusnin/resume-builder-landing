@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Card, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Check, ArrowRight } from "lucide-react";
+import { appRegisterWithPlan } from '../lib/links';
 
 export function OfferSection() {
   const allFeatures = [
@@ -81,14 +82,16 @@ export function OfferSection() {
           {/* Primary CTA with Price */}
           <div className="max-w-xl mx-auto mb-16">
             <div className="space-y-4">
-              <Button size="lg" className="text-xl px-8 py-10 w-full bg-primary hover:bg-primary/90 flex flex-col cursor-pointer">
-                <div className="flex flex-row items-center">
-                  Start Building My Perfect Resume for $5
-                  <ArrowRight className="w-5 h-5 ml-2"/>
-                </div>
-                <div className="text-xs text-red-500">
-                  Launch Special: save $19.49 on your first month
-                </div>
+              <Button size="lg" className="text-xl px-8 py-10 w-full bg-primary hover:bg-primary/90 flex flex-col cursor-pointer" asChild>
+                <a href={appRegisterWithPlan('monthly')}>
+                  <div className="flex flex-row items-center">
+                    Start Building My Perfect Resume for $5
+                    <ArrowRight className="w-5 h-5 ml-2"/>
+                  </div>
+                  <div className="text-xs text-red-500">
+                    Launch Special: save $19.49 on your first month
+                  </div>
+                </a>
               </Button>
 
               <div className="text-sm text-muted-foreground text-center">
@@ -120,9 +123,11 @@ export function OfferSection() {
                     $16.50/month effective
                   </div>
                 </div>
-                <Button variant="outline" size="lg" className="w-full">
-                  Get Quarterly Plan
-                  <ArrowRight className="w-4 h-4 ml-2"/>
+                <Button variant="outline" size="lg" className="w-full" asChild>
+                  <a href={appRegisterWithPlan('quarterly')}>
+                    Get Quarterly Plan
+                    <ArrowRight className="w-4 h-4 ml-2"/>
+                  </a>
                 </Button>
               </CardHeader>
             </Card>
@@ -144,9 +149,11 @@ export function OfferSection() {
                     $8.29/month effective
                   </div>
                 </div>
-                <Button variant="outline" size="lg" className="w-full">
-                  Get Annual Plan
-                  <ArrowRight className="w-4 h-4 ml-2"/>
+                <Button variant="outline" size="lg" className="w-full" asChild>
+                  <a href={appRegisterWithPlan('annual')}>
+                    Get Annual Plan
+                    <ArrowRight className="w-4 h-4 ml-2"/>
+                  </a>
                 </Button>
               </CardHeader>
             </Card>
