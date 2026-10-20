@@ -47,7 +47,7 @@ export function StructuredData() {
             name: 'Monthly plan',
             price: toNumber(pricing.monthlyPrice),
             priceCurrency: pricing.currency,
-            description: `${pricing.introPrice} for the first ${pricing.introDays} days, then ${pricing.monthlyPrice} per month`,
+            description: `${pricing.introPrice} for the first month, then ${pricing.monthlyPrice} per month`,
             url: `${SITE_URL}/#pricing`,
           },
           {
@@ -55,7 +55,7 @@ export function StructuredData() {
             name: 'Quarterly plan',
             price: toNumber(pricing.quarterlyPrice),
             priceCurrency: pricing.currency,
-            description: `${pricing.quarterlyPrice} every 3 months`,
+            description: `${pricing.quarterlyPrice} every 90 days`,
             url: `${SITE_URL}/#pricing`,
           },
           {

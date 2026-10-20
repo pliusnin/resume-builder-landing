@@ -85,15 +85,15 @@ export function TermsOfService() {
         </P>
         <H3>Plans</H3>
         <Ul>
-          <Li><Strong>Monthly plan:</Strong> an introductory period of {pricing.introDays} days for {pricing.introPrice}, followed by {pricing.monthlyPrice} per month.</Li>
-          <Li><Strong>Quarterly plan:</Strong> {pricing.quarterlyPrice} every 3 months.</Li>
+          <Li><Strong>Monthly plan:</Strong> a discounted first month for {pricing.introPrice}, followed by {pricing.monthlyPrice} per month.</Li>
+          <Li><Strong>Quarterly plan:</Strong> {pricing.quarterlyPrice} every 90 days.</Li>
           <Li><Strong>Annual plan:</Strong> {pricing.annualPrice} every 12 months.</Li>
         </Ul>
         <Callout title="Automatic renewal — please read">
           <Ul>
-            <Li>Your subscription <Strong>renews automatically</Strong> at the end of each billing period (and, for the monthly plan, at the end of the {pricing.introDays}-day introductory period) for a further period of the same length, at the then-current price for your plan, until you cancel.</Li>
+            <Li>Your subscription <Strong>renews automatically</Strong> at the end of each billing period (for the monthly plan, including the discounted first month) for a further period of the same length, at the then-current price for your plan, until you cancel.</Li>
             <Li>We charge the payment method on file on the first day of each new period. The introductory price applies once per customer.</Li>
-            <Li>You can <Strong>cancel at any time</Strong> from the Billing page in your account or by emailing <Email value={legal.contactEmail} />. Cancellation stops future charges; you keep access until the end of the period you have already paid for. To avoid being charged the standard monthly price, cancel before the introductory period ends.</Li>
+            <Li>You can <Strong>cancel at any time</Strong> from the Billing page in your account or by emailing <Email value={legal.contactEmail} />. Cancellation stops future charges; you keep access until the end of the period you have already paid for. To avoid being charged the standard monthly price, cancel before the discounted first month ends.</Li>
             <Li>For quarterly and annual plans we send a reminder email before the renewal date, and in any case where the law requires it.</Li>
           </Ul>
         </Callout>

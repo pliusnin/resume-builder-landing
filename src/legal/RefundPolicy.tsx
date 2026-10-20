@@ -40,7 +40,7 @@ export function RefundPolicy() {
 
       <Section id="billing" title="2. How billing works">
         <Ul>
-          <Li>The <Strong>monthly plan</Strong> starts with a {pricing.introDays}-day introductory period for {pricing.introPrice}. Unless you cancel before it ends, it continues at {pricing.monthlyPrice} per month.</Li>
+          <Li>The <Strong>monthly plan</Strong> starts with a discounted first month for {pricing.introPrice}. Unless you cancel before it ends, it continues at {pricing.monthlyPrice} per month.</Li>
           <Li>The <Strong>quarterly plan</Strong> ({pricing.quarterlyPrice}) and the <Strong>annual plan</Strong> ({pricing.annualPrice}) are paid up front for the whole period.</Li>
           <Li>All plans <Strong>renew automatically</Strong> for the same period until you cancel. We charge the payment method on file at the start of each period. Prices are in {pricing.currency} and exclude taxes unless shown otherwise at checkout.</Li>
           <Li>Building and editing resumes is free; a subscription is required to download PDFs.</Li>

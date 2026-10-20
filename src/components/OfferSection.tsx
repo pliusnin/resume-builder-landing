@@ -83,16 +83,16 @@ export function OfferSection() {
             <div className="space-y-4">
               <Button size="lg" className="text-xl px-8 py-10 w-full bg-primary hover:bg-primary/90 flex flex-col cursor-pointer">
                 <div className="flex flex-row items-center">
-                  Start Building My Perfect Resume for $2.49
+                  Start Building My Perfect Resume for $5
                   <ArrowRight className="w-5 h-5 ml-2"/>
                 </div>
                 <div className="text-xs text-red-500">
-                  90% Off Launch Special
+                  Launch Special: save $19.49 on your first month
                 </div>
               </Button>
 
               <div className="text-sm text-muted-foreground text-center">
-                First 7 days only • Then $24.49/month • Cancel anytime
+                First month only • Then $24.49/month • Cancel anytime
               </div>
             </div>
           </div>

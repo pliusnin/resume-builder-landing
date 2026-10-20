@@ -3,7 +3,7 @@
  *
  * Any value written in [SQUARE BRACKETS] is treated as a placeholder: it is highlighted in
  * development builds (see `Var` in components/legal/Prose.tsx) so it cannot be overlooked.
- * Keep prices in sync with `src/components/OfferSection.tsx`.
+ * Keep prices in sync with `src/components/OfferSection.tsx` and the API's `BillingPlanCatalog` / lava.top offer.
  */
 import { SITE_HOST, SITE_NAME, SITE_URL } from '../lib/site';
 
@@ -23,8 +23,8 @@ export const legal = {
   ukRepresentative: 'not applicable',
 
   pricing: {
-    introPrice: '$2.49',
-    introDays: 7,
+    // Price of the first month of the monthly plan (a promo code at checkout), once per customer.
+    introPrice: '$5.00',
     monthlyPrice: '$24.49',
     quarterlyPrice: '$49.49',
     annualPrice: '$99.49',

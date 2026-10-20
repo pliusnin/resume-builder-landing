@@ -56,7 +56,7 @@ Treat these pages as drafts for a lawyer's review, not as reviewed legal advice.
 ## Product promises (what the app + API must satisfy)
 **Features:** 5‑minute guided wizard · "100% ATS optimized" templates ("10+" on pricing, "dozens" on features – the app currently has 3) · instant high-quality PDF download · AI keyword optimization against job descriptions · ATS score checker with real-time feedback · AI content / bullet-point suggestions · easy updates and tailoring per application · "Upload My Resume" (import an existing resume) · mobile-friendly editor · 24/7 customer support · free updates · instant access after login.
 
-**Pricing:** $2.49 for the first 7 days, then $24.49/month · Quarterly $49.49 ($16.50/mo) · Annual $99.49 ($8.29/mo) · "Cancel anytime" · "Secure payment, enterprise-grade encryption".
+**Pricing:** $5 for the first month (lava.top promo code, first-time subscribers only), then $24.49/month · Quarterly $49.49 every 90 days ($16.50/mo) · Annual $99.49 ($8.29/mo) · "Cancel anytime" · "Secure payment, enterprise-grade encryption". Payments run through lava.top (API repo `CLAUDE.md` → Billing). Prices appear in `OfferSection.tsx`, `index.html` meta description, and `src/legal/config.ts` (`pricing`, used by Terms, Refund Policy and the JSON-LD in `StructuredData.tsx`); keep them in sync with the API's `BillingPlanCatalog`.
 
 ## Known gaps / TODO
 - **No CTA is wired.** `Sign In`, `Get Started`, both hero buttons and all three pricing buttons have no `href`/`onClick`. They must link to the builder app (`/register`, `/login`), ideally with the chosen plan as a query param.
