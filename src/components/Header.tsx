@@ -48,9 +48,6 @@ export function Header() {
               <Button size="lg" className="text-lg px-8 py-6" asChild>
                 <a href={links.appRegister}>Create My Perfect Resume</a>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                Upload My Resume
-              </Button>
             </div>
 
             <div className="flex items-center space-x-8 text-sm text-muted-foreground">

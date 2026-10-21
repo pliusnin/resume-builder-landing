@@ -59,7 +59,7 @@ Treat these pages as drafts for a lawyer's review, not as reviewed legal advice.
 **Pricing:** $5 for the first month (lava.top promo code, first-time subscribers only), then $24.49/month · Quarterly $49.49 every 90 days ($16.50/mo) · Annual $99.49 ($8.29/mo) · "Cancel anytime" · "Secure payment, enterprise-grade encryption". Payments run through lava.top (API repo `CLAUDE.md` → Billing). Prices appear in `OfferSection.tsx`, `index.html` meta description, and `src/legal/config.ts` (`pricing`, used by Terms, Refund Policy and the JSON-LD in `StructuredData.tsx`); keep them in sync with the API's `BillingPlanCatalog`.
 
 ## Known gaps / TODO
-- CTAs link to the app via `links.appLogin` / `links.appRegister` / `appRegisterWithPlan(plan)` (origin from `VITE_APP_URL` in `.env`, `?plan=monthly|quarterly|annual` on the pricing buttons; the SPA does not read `plan` yet). **"Upload My Resume" is still unlinked** because no import feature exists; remove the button or build the feature.
+- CTAs link to the app via `links.appLogin` / `links.appRegister` / `appRegisterWithPlan(plan)` (origin from `VITE_APP_URL` in `.env`, `?plan=monthly|quarterly|annual` on the pricing buttons; the SPA does not read `plan` yet). The "Upload My Resume" button was removed on 2026-10-21 because no import feature exists.
 - Marketing numbers (50K+ users, 94% ATS pass rate, 98% ATS score, 3.2x interviews) are placeholders; the hero/how-it-works mockup contains Lorem Ipsum and the testimonials heading has no content (Dmitry chose to keep both for now).
 - Images are heavy (`5min-create.jpg` is 3.4 MB) and not lazy-loaded; no mobile menu below 768 px.
 - `README.md` is still the Vite template.
